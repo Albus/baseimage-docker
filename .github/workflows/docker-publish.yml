@@ -13,7 +13,7 @@ on:
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
-    branches: [  ]
+    branches: [ master ]
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -61,4 +61,4 @@ jobs:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          #labels: ${{ steps.meta.outputs.labels }}
